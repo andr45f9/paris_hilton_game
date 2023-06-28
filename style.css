@@ -1,0 +1,617 @@
+#screen {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#game_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(alle_spil_elementer/background.svg);
+  background-size: cover;
+}
+
+/* ---------------------------- */
+/*Alle container og sprite*/
+
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#cherry_container1 {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 150/150;
+}
+
+#cherry_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(alle_spil_elementer/icon_cherry.svg);
+  background-size: cover;
+}
+
+#glitter_container1 {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 150/150;
+}
+
+#glitter_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(alle_spil_elementer/icon_glitter.svg);
+  background-size: cover;
+}
+
+#frosting_container1 {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 150/150;
+}
+
+#frosting_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(alle_spil_elementer/icon_frosting.svg);
+  background-size: cover;
+}
+
+#money_container1 {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 150/150;
+}
+
+#money_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(alle_spil_elementer/icon_money.svg);
+  background-size: cover;
+}
+
+#dog_container1 {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 150/150;
+}
+
+#dog_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(alle_spil_elementer/icon_dog.svg);
+  background-size: cover;
+}
+
+#birkin_container1 {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 150/150;
+}
+
+#birkin_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(alle_spil_elementer/icon_birkin.svg);
+  background-size: cover;
+}
+
+/* ---------------------------- */
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#score_board {
+  width: 14%;
+  position: absolute;
+  top: -4%;
+  left: 88%;
+  aspect-ratio: 150/150;
+  background-image: url(alle_spil_elementer/ui_points.svg);
+  background-size: cover;
+}
+
+#point_count {
+  width: 14%;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  aspect-ratio: 150/150;
+  background-size: cover;
+}
+
+#life_board1 {
+  width: 8%;
+  position: absolute;
+  top: -1%;
+  left: 20%;
+  aspect-ratio: 150/150;
+  background-image: url(alle_spil_elementer/ui_heart.svg);
+  background-size: cover;
+}
+#hjerte_liv {
+  width: 8%;
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  aspect-ratio: 150/150;
+}
+
+#life_board2 {
+  width: 8%;
+  position: absolute;
+  top: -1%;
+  left: 25%;
+  aspect-ratio: 150/150;
+  background-image: url(alle_spil_elementer/ui_heart.svg);
+  background-size: cover;
+}
+#life_board3 {
+  width: 8%;
+  position: absolute;
+  top: -1%;
+  left: 30%;
+  aspect-ratio: 150/150;
+  background-image: url(alle_spil_elementer/ui_heart.svg);
+  background-size: cover;
+}
+
+#time_container {
+  position: absolute;
+  width: 3.5%;
+  aspect-ratio: 6/30;
+  outline: solid #bf4061;
+  top: -9%;
+  left: 9%;
+  transform: rotate(90deg);
+}
+
+#time_sprite {
+  width: 100%;
+  height: 100%;
+  background-color: #f2e203;
+  transform-origin: center bottom;
+}
+
+/* ---------------------------- */
+/*Alle animationer*/
+
+.forsvind {
+  animation-name: forsvind_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes forsvind_kf {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.drej {
+  animation-name: drej_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes drej_kf {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(0);
+  }
+}
+
+.frys {
+  animation-play-state: paused;
+}
+
+.fald {
+  animation-name: fald_kf;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes fald_kf {
+  0% {
+    transform: translateY(-300%);
+  }
+
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+.time {
+  animation-name: time_kf;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes time_kf {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+.hide {
+  display: none;
+}
+/* ---------------------------- */
+
+/*Positioner*/
+
+.pos1 {
+  top: 37%;
+  left: 40%;
+}
+
+.pos2 {
+  top: 37%;
+  left: 50%;
+}
+
+.pos3 {
+  top: 37%;
+  left: 60%;
+}
+
+.pos4 {
+  top: 37%;
+  left: 70%;
+}
+
+.pos5 {
+  top: 37%;
+  left: 80%;
+}
+
+/*Delay*/
+.delay1 {
+  animation-delay: 0s;
+}
+
+.delay2 {
+  animation-delay: 1s;
+}
+
+.delay3 {
+  animation-delay: 2s;
+}
+/* ---------------------------- */
+
+/* animation til hjertet så det forsvinder ved klik */
+.fjernet {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+/* ---------------------------- */
+
+/* Start-, vinder- og taberskærm samt knapper*/
+
+#start {
+  position: absolute;
+  background-image: url(alle_spil_elementer/front_page.svg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  aspect-ratio: 1980/1080;
+}
+
+#spil_knap {
+  position: absolute;
+  top: 54%;
+  left: 70%;
+  background-image: url(alle_spil_elementer/spil_knap.svg);
+  aspect-ratio: 150/150;
+  width: 15%;
+  background-size: cover;
+
+  animation-name: puls_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes puls_kf {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#how_to_play {
+  position: absolute;
+  background-image: url(alle_spil_elementer/how_to_play.svg);
+  top: -17px;
+  left: -2px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  aspect-ratio: 1000/600;
+}
+
+#start_knap {
+  position: absolute;
+  top: 67%;
+  left: 76%;
+  background-image: url(alle_spil_elementer/start_knap.svg);
+  aspect-ratio: 150/150;
+  width: 15%;
+  background-size: cover;
+
+  animation-name: puls_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+#game_over {
+  position: absolute;
+  background-image: url(alle_spil_elementer/game_over.svg);
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  aspect-ratio: 1000/600;
+}
+
+#genstart1 {
+  position: absolute;
+  top: 48%;
+  left: 56%;
+  background-image: url(alle_spil_elementer/proev_igen_knap.svg);
+  aspect-ratio: 150/150;
+  width: 15%;
+  background-size: cover;
+
+  animation-name: puls_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+#level_complete {
+  position: absolute;
+  background-image: url(alle_spil_elementer/Level_complete.svg);
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  aspect-ratio: 1000/600;
+}
+
+#genstart2 {
+  position: absolute;
+  top: 48%;
+  left: 56%;
+  background-image: url(alle_spil_elementer/spil_igen_knap.svg);
+  aspect-ratio: 150/150;
+  width: 15%;
+  background-size: cover;
+
+  animation-name: puls_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+/*-------------- ALT STYLING AF SELVE SIDEN ------------------*/
+/*Styling af tekst*/
+h1,
+h2,
+h3 {
+  font-family: "DM Serif Display", serif;
+  color: #ff4db3;
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-family: "DM Serif Display", serif;
+  color: #a880b9;
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+#logo_top {
+  font-size: 1.3rem;
+  padding-left: 0;
+  padding-top: 2rem;
+  margin-left: 2rem;
+}
+
+/*------------------*/
+
+/*Grid strukturen for alle siderne*/
+main {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+}
+section {
+  grid-column: 2/3;
+}
+/*------------------*/
+
+/*Styling af menuen*/
+a {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.2rem;
+  color: #fff0f9;
+  text-decoration: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  padding: 0;
+  margin: 2rem;
+  margin-bottom: 4rem;
+  gap: 20px;
+  box-shadow: 0 12px 28px 0 #806b73 (0, 0, 0, 0.3);
+  background-color: #e49fb8;
+  border-radius: 1rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 2rem;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+a:hover {
+  color: #5f2a80;
+}
+
+/*------------------*/
+
+/*Generelt*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 90px;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: #fff0f9;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #c54291;
+  margin-bottom: 1.5rem;
+}
+
+/*------------------*/
+
+/*Asset liste: spillets farver*/
+.farve {
+  height: 70px;
+  width: 70px;
+  border: 5px solid #fff;
+}
+
+.farve_1 {
+  background: #5f2a80;
+}
+.farve_2 {
+  background: #a880b9;
+}
+.farve_3 {
+  background: #c2a2cc;
+}
+.farve_4 {
+  background: #c54291;
+}
+.farve_5 {
+  background: #e05a9c;
+}
+.farve_6 {
+  background: #d98faa;
+}
+.farve_7 {
+  background: #f2c9e1;
+}
+.farve_8 {
+  background: #c01632;
+}
+.farve_9 {
+  background: #397352;
+}
+.farve_10 {
+  background: #f2e203;
+}
+
+.alle_farver {
+  display: flex;
+  flex-flow: wrap;
+  gap: 20px;
+}
+/*------------------*/
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 20;
+  }
+
+  header {
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
